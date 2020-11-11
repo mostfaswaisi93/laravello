@@ -6,6 +6,8 @@
       </div>
 
       <div class="w-full sm:shadow-xl sm:bg-white sm:py-8 sm:px-12">
+        <Errors :errors="errors"></Errors>
+
         <div class="w-full text-center text-gray-600 font-bold mb-8">Log in to Laravello</div>
 
         <form @submit.prevent="authenticate">
@@ -50,15 +52,20 @@
 
 <script>
 import Login from "./graphql/Login.gql";
+import { gqlErrors } from "./utils";
+import Errors from "./components/Errors";
 export default {
+  components: { Errors },
   data() {
     return {
       email: null,
-      password: null
+      password: null,
+      errors: []
     };
   },
   methods: {
     async authenticate() {
+      this.errors = [];
       try {
         await this.$apollo.mutate({
           mutation: Login,
@@ -68,9 +75,9 @@ export default {
           }
         });
       } catch (err) {
-        console.log(err);
+        console.log(gqlErrors(err));
+        this.errors = gqlErrors(err);
       }
-      console.log("Hey!");
     }
   }
 };
