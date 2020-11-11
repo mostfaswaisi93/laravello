@@ -1,9 +1,13 @@
-require('./bootstrap');
+import Vue from 'vue';
+import apolloProvider from './apollo.config';
+import Board from './Board';
+import './bootstrap';
 
-window.Vue = require('vue');
+window.Vue = Vue;
 
-Vue.component('Board', require('./Board.vue').default);
+Vue.component('Board', Board);
 
 const app = new Vue({
     el: '#app',
+    apolloProvider
 });
