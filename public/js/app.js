@@ -5643,14 +5643,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_List__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/List */ "./resources/js/components/List.vue");
-/* harmony import */ var _components_UserBoardsDropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/UserBoardsDropdown */ "./resources/js/components/UserBoardsDropdown.vue");
-/* harmony import */ var _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graphql/BoardWithListsAndCards.gql */ "./resources/js/graphql/BoardWithListsAndCards.gql");
-/* harmony import */ var _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphql/Logout.gql */ "./resources/js/graphql/Logout.gql");
-/* harmony import */ var _graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./resources/js/constants.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils */ "./resources/js/utils.js");
+/* harmony import */ var _components_ListAddEditor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ListAddEditor */ "./resources/js/components/ListAddEditor.vue");
+/* harmony import */ var _components_UserBoardsDropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/UserBoardsDropdown */ "./resources/js/components/UserBoardsDropdown.vue");
+/* harmony import */ var _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphql/BoardWithListsAndCards.gql */ "./resources/js/graphql/BoardWithListsAndCards.gql");
+/* harmony import */ var _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphql/Logout.gql */ "./resources/js/graphql/Logout.gql");
+/* harmony import */ var _graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./constants */ "./resources/js/constants.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils */ "./resources/js/utils.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -5701,6 +5702,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+
 
 
 
@@ -5711,7 +5715,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     List: _components_List__WEBPACK_IMPORTED_MODULE_1__["default"],
-    UserBoardsDropdown: _components_UserBoardsDropdown__WEBPACK_IMPORTED_MODULE_2__["default"]
+    UserBoardsDropdown: _components_UserBoardsDropdown__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ListAddEditor: _components_ListAddEditor__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   computed: _objectSpread({
     bgColor: function bgColor() {
@@ -5719,9 +5724,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       return _defineProperty({
         "bg-gray-500": this.$apollo.loading
-      }, _utils__WEBPACK_IMPORTED_MODULE_7__["colorMap500"][(_this$board = this.board) === null || _this$board === void 0 ? void 0 : _this$board.color], true);
+      }, _utils__WEBPACK_IMPORTED_MODULE_8__["colorMap500"][(_this$board = this.board) === null || _this$board === void 0 ? void 0 : _this$board.color], true);
     }
-  }, Object(vuex__WEBPACK_IMPORTED_MODULE_6__["mapState"])({
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_7__["mapState"])({
     isLoggedIn: "isLoggedIn",
     name: function name(state) {
       return state.user.name;
@@ -5729,7 +5734,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   apollo: {
     board: {
-      query: _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_3___default.a,
+      query: _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_4___default.a,
       variables: function variables() {
         return {
           id: Number(this.$route.params.id)
@@ -5751,7 +5756,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 0:
                 _context.next = 2;
                 return _this.$apollo.mutate({
-                  mutation: _graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_4___default.a
+                  mutation: _graphql_Logout_gql__WEBPACK_IMPORTED_MODULE_5___default.a
                 });
 
               case 2:
@@ -5771,7 +5776,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     updateQueryCache: function updateQueryCache(event) {
       var data = event.store.readQuery({
-        query: _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_3___default.a,
+        query: _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_4___default.a,
         variables: {
           id: Number(this.board.id)
         }
@@ -5784,17 +5789,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       };
 
       switch (event.type) {
-        case _constants__WEBPACK_IMPORTED_MODULE_5__["EVENT_CARD_ADDED"]:
+        case _constants__WEBPACK_IMPORTED_MODULE_6__["EVENT_LIST_ADDED"]:
+          data.board.lists.push(event.data);
+          break;
+
+        case _constants__WEBPACK_IMPORTED_MODULE_6__["EVENT_CARD_ADDED"]:
           listById().cards.push(event.data);
           break;
 
-        case _constants__WEBPACK_IMPORTED_MODULE_5__["EVENT_CARD_UPDATED"]:
+        case _constants__WEBPACK_IMPORTED_MODULE_6__["EVENT_CARD_UPDATED"]:
           listById().cards.filter(function (card) {
             return card.id == event.data.id;
           }).title = event.data.title;
           break;
 
-        case _constants__WEBPACK_IMPORTED_MODULE_5__["EVENT_CARD_DELETED"]:
+        case _constants__WEBPACK_IMPORTED_MODULE_6__["EVENT_CARD_DELETED"]:
           listById().cards = listById().cards.filter(function (card) {
             return card.id != event.data.id;
           });
@@ -5802,7 +5811,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       event.store.writeQuery({
-        query: _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_3___default.a,
+        query: _graphql_BoardWithListsAndCards_gql__WEBPACK_IMPORTED_MODULE_4___default.a,
         data: data,
         variables: {
           id: Number(this.board.id)
@@ -6691,6 +6700,107 @@ __webpack_require__.r(__webpack_exports__);
       return this.list.board.owner.id == state.user.id;
     }
   })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListAddEditor.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ListAddEditor.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_clickaway__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-clickaway */ "./node_modules/vue-clickaway/dist/vue-clickaway.common.js");
+/* harmony import */ var vue_clickaway__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_clickaway__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./resources/js/constants.js");
+/* harmony import */ var _graphql_ListAdd_gql__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../graphql/ListAdd.gql */ "./resources/js/graphql/ListAdd.gql");
+/* harmony import */ var _graphql_ListAdd_gql__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_graphql_ListAdd_gql__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["board"],
+  data: function data() {
+    return {
+      editing: false,
+      title: null
+    };
+  },
+  directives: {
+    onClickaway: vue_clickaway__WEBPACK_IMPORTED_MODULE_0__["directive"]
+  },
+  methods: {
+    hideEditor: function hideEditor() {
+      this.editing = false;
+    },
+    startEditing: function startEditing() {
+      var _this = this;
+
+      this.editing = true; // Activate the input (focus)
+
+      this.$nextTick(function () {
+        return _this.$refs.title.focus();
+      });
+    },
+    addList: function addList() {
+      var self = this;
+      this.$apollo.mutate({
+        mutation: _graphql_ListAdd_gql__WEBPACK_IMPORTED_MODULE_2___default.a,
+        variables: {
+          title: this.title,
+          board: this.board
+        },
+        update: function update(store, _ref) {
+          var listAdd = _ref.data.listAdd;
+          self.$emit("added", {
+            store: store,
+            data: listAdd,
+            type: _constants__WEBPACK_IMPORTED_MODULE_1__["EVENT_LIST_ADDED"]
+          });
+          self.hideEditor();
+        }
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -33893,24 +34003,35 @@ var render = function() {
           ? _c(
               "div",
               { staticClass: "flex flex-1 items-start overflow-x-auto mx-2" },
-              _vm._l(_vm.board.lists, function(list) {
-                return _c("List", {
-                  key: list.id,
-                  attrs: { list: list },
+              [
+                _vm._l(_vm.board.lists, function(list) {
+                  return _c("List", {
+                    key: list.id,
+                    attrs: { list: list },
+                    on: {
+                      "card-added": function($event) {
+                        return _vm.updateQueryCache($event)
+                      },
+                      "card-deleted": function($event) {
+                        return _vm.updateQueryCache($event)
+                      },
+                      "card-updated": function($event) {
+                        return _vm.updateQueryCache($event)
+                      }
+                    }
+                  })
+                }),
+                _vm._v(" "),
+                _c("ListAddEditor", {
+                  attrs: { board: _vm.board.id },
                   on: {
-                    "card-added": function($event) {
-                      return _vm.updateQueryCache($event)
-                    },
-                    "card-deleted": function($event) {
-                      return _vm.updateQueryCache($event)
-                    },
-                    "card-updated": function($event) {
+                    added: function($event) {
                       return _vm.updateQueryCache($event)
                     }
                   }
                 })
-              }),
-              1
+              ],
+              2
             )
           : _vm._e()
       ])
@@ -34819,6 +34940,123 @@ var render = function() {
     ],
     2
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListAddEditor.vue?vue&type=template&id=07446e15&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ListAddEditor.vue?vue&type=template&id=07446e15& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    !_vm.editing
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "list bg-white hover:bg-gray-500 rounded-sm p-2 mr-2 opacity-75 text-black cursor-pointer",
+            on: { click: _vm.startEditing }
+          },
+          [_vm._v("＋ Add another list")]
+        )
+      : _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "on-clickaway",
+                rawName: "v-on-clickaway",
+                value: _vm.hideEditor,
+                expression: "hideEditor"
+              }
+            ],
+            staticClass: "bg-gray-300 rounded-sm p-2 list"
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.title,
+                  expression: "title"
+                }
+              ],
+              ref: "title",
+              staticClass:
+                "rounded-sm border-blue-600 border-2 py-1 px-2 outline-none w-full text-gray-800 text-sm",
+              attrs: { type: "text", placeholder: "Enter list title..." },
+              domProps: { value: _vm.title },
+              on: {
+                keyup: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "esc", 27, $event.key, [
+                      "Esc",
+                      "Escape"
+                    ])
+                  ) {
+                    return null
+                  }
+                  return _vm.hideEditor($event)
+                },
+                keypress: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.addList($event)
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "mt-2 rounded-sm py-1 px-3 bg-blue-700 text-white cursor-pointer hover:bg-blue-500 outline-none",
+                  on: { click: _vm.addList }
+                },
+                [_vm._v("Add List")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-2 ml-1 px-3 rounded-md hover:bg-gray-400 cursor-pointer text-gray-500 flex items-center justify-center",
+                  on: { click: _vm.hideEditor }
+                },
+                [_c("div", [_vm._v("✖")])]
+              )
+            ])
+          ]
+        )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -53242,6 +53480,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ListAddEditor.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/ListAddEditor.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ListAddEditor_vue_vue_type_template_id_07446e15___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListAddEditor.vue?vue&type=template&id=07446e15& */ "./resources/js/components/ListAddEditor.vue?vue&type=template&id=07446e15&");
+/* harmony import */ var _ListAddEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListAddEditor.vue?vue&type=script&lang=js& */ "./resources/js/components/ListAddEditor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ListAddEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ListAddEditor_vue_vue_type_template_id_07446e15___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ListAddEditor_vue_vue_type_template_id_07446e15___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ListAddEditor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ListAddEditor.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/ListAddEditor.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAddEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ListAddEditor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListAddEditor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAddEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ListAddEditor.vue?vue&type=template&id=07446e15&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/ListAddEditor.vue?vue&type=template&id=07446e15& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAddEditor_vue_vue_type_template_id_07446e15___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ListAddEditor.vue?vue&type=template&id=07446e15& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListAddEditor.vue?vue&type=template&id=07446e15&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAddEditor_vue_vue_type_template_id_07446e15___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAddEditor_vue_vue_type_template_id_07446e15___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Modal.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/Modal.vue ***!
@@ -53402,7 +53709,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/js/constants.js ***!
   \***********************************/
-/*! exports provided: EVENT_CARD_ADDED, EVENT_CARD_DELETED, EVENT_CARD_UPDATED */
+/*! exports provided: EVENT_CARD_ADDED, EVENT_CARD_DELETED, EVENT_CARD_UPDATED, EVENT_LIST_ADDED */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53410,9 +53717,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EVENT_CARD_ADDED", function() { return EVENT_CARD_ADDED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EVENT_CARD_DELETED", function() { return EVENT_CARD_DELETED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EVENT_CARD_UPDATED", function() { return EVENT_CARD_UPDATED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EVENT_LIST_ADDED", function() { return EVENT_LIST_ADDED; });
 var EVENT_CARD_ADDED = 'EVENT_CARD_ADDED';
 var EVENT_CARD_DELETED = 'EVENT_CARD_DELETED';
 var EVENT_CARD_UPDATED = 'EVENT_CARD_UPDATED';
+var EVENT_LIST_ADDED = 'EVENT_LIST_ADDED';
 
 /***/ }),
 
@@ -54074,6 +54383,139 @@ var EVENT_CARD_UPDATED = 'EVENT_CARD_UPDATED';
     module.exports = doc;
     
         module.exports["CardUpdate"] = oneQuery(doc, "CardUpdate");
+        
+
+
+/***/ }),
+
+/***/ "./resources/js/graphql/ListAdd.gql":
+/*!******************************************!*\
+  !*** ./resources/js/graphql/ListAdd.gql ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"ListAdd"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"title"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"directives":[]},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"board"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}},"directives":[]}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"listAdd"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"title"},"value":{"kind":"Variable","name":{"kind":"Name","value":"title"}}},{"kind":"Argument","name":{"kind":"Name","value":"board_id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"board"}}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"},"arguments":[],"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"title"},"arguments":[],"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"board_id"},"arguments":[],"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"board"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"owner"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"},"arguments":[],"directives":[]}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"cards"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"},"arguments":[],"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"title"},"arguments":[],"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"order"},"arguments":[],"directives":[]},{"kind":"Field","name":{"kind":"Name","value":"owner"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"},"arguments":[],"directives":[]}]}}]}}]}}]}}],"loc":{"start":0,"end":375}};
+    doc.loc.source = {"body":"mutation ListAdd($title: String!, $board: ID!) {\r\n    listAdd(title: $title, board_id: $board) {\r\n        id\r\n        title\r\n        board_id\r\n        board {\r\n            owner {\r\n                id\r\n            }\r\n        }\r\n        cards {\r\n            id\r\n            title\r\n            order\r\n            owner {\r\n                id\r\n            }\r\n        }\r\n    }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
+
+    // Collect any fragment/type references from a node, adding them to the refs Set
+    function collectFragmentReferences(node, refs) {
+      if (node.kind === "FragmentSpread") {
+        refs.add(node.name.value);
+      } else if (node.kind === "VariableDefinition") {
+        var type = node.type;
+        if (type.kind === "NamedType") {
+          refs.add(type.name.value);
+        }
+      }
+
+      if (node.selectionSet) {
+        node.selectionSet.selections.forEach(function(selection) {
+          collectFragmentReferences(selection, refs);
+        });
+      }
+
+      if (node.variableDefinitions) {
+        node.variableDefinitions.forEach(function(def) {
+          collectFragmentReferences(def, refs);
+        });
+      }
+
+      if (node.definitions) {
+        node.definitions.forEach(function(def) {
+          collectFragmentReferences(def, refs);
+        });
+      }
+    }
+
+    var definitionRefs = {};
+    (function extractReferences() {
+      doc.definitions.forEach(function(def) {
+        if (def.name) {
+          var refs = new Set();
+          collectFragmentReferences(def, refs);
+          definitionRefs[def.name.value] = refs;
+        }
+      });
+    })();
+
+    function findOperation(doc, name) {
+      for (var i = 0; i < doc.definitions.length; i++) {
+        var element = doc.definitions[i];
+        if (element.name && element.name.value == name) {
+          return element;
+        }
+      }
+    }
+
+    function oneQuery(doc, operationName) {
+      // Copy the DocumentNode, but clear out the definitions
+      var newDoc = {
+        kind: doc.kind,
+        definitions: [findOperation(doc, operationName)]
+      };
+      if (doc.hasOwnProperty("loc")) {
+        newDoc.loc = doc.loc;
+      }
+
+      // Now, for the operation we're running, find any fragments referenced by
+      // it or the fragments it references
+      var opRefs = definitionRefs[operationName] || new Set();
+      var allRefs = new Set();
+      var newRefs = new Set();
+
+      // IE 11 doesn't support "new Set(iterable)", so we add the members of opRefs to newRefs one by one
+      opRefs.forEach(function(refName) {
+        newRefs.add(refName);
+      });
+
+      while (newRefs.size > 0) {
+        var prevRefs = newRefs;
+        newRefs = new Set();
+
+        prevRefs.forEach(function(refName) {
+          if (!allRefs.has(refName)) {
+            allRefs.add(refName);
+            var childRefs = definitionRefs[refName] || new Set();
+            childRefs.forEach(function(childRef) {
+              newRefs.add(childRef);
+            });
+          }
+        });
+      }
+
+      allRefs.forEach(function(refName) {
+        var op = findOperation(doc, refName);
+        if (op) {
+          newDoc.definitions.push(op);
+        }
+      });
+
+      return newDoc;
+    }
+
+    module.exports = doc;
+    
+        module.exports["ListAdd"] = oneQuery(doc, "ListAdd");
         
 
 
