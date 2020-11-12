@@ -2,7 +2,7 @@
   <div class="h-full flex flex-col items-stretch" :class="bgColor">
     <div class="header text-white flex justify-between items-center mb-2">
       <div class="ml-2 w-1/3">
-        <UserBoardsDropdown></UserBoardsDropdown>
+        <UserBoardsDropdown v-if="isLoggedIn"></UserBoardsDropdown>
       </div>
       <div class="text-lg opacity-50 cursor-pointer hover:opacity-75">Laravello</div>
       <div class="mr-2 w-1/3 flex justify-end">
@@ -102,7 +102,11 @@ export default {
           );
           break;
       }
-      event.store.writeQuery({ query: BoardQuery, data });
+      event.store.writeQuery({
+        query: BoardQuery,
+        data,
+        variables: { id: Number(this.board.id) }
+      });
     }
   }
 };
