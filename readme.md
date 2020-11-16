@@ -1,1 +1,2 @@
-## Laravel - (Trello Clone) with Vue, GraphQL and Tailwind
+## Laravel - (Trello Clone) with Vue, GraphQL, and Tailwind
+
